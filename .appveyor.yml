@@ -25,7 +25,7 @@ before_test:
   # TMPDIR is used by Python to detect the temporary directory: https://docs.python.org/3/library/tempfile.html#tempfile.tempdir
   - set TMPDIR=%APPVEYOR_BUILD_FOLDER%\test\__tmpdir__
   - mkdir %TMPDIR%
-  - icacls %TMPDIR% /inheritance:r /grant Everyone:(OI)(CI)F
+  - icacls %TMPDIR% /inheritance:r /grant Everyone:F
 
 test_script:
   - "pytest"
